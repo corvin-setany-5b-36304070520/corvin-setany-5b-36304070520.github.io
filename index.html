@@ -48,7 +48,8 @@
     "name": "Corvin sétány, ötödik emelet, videós bemutató",
     "description": "Bejárás a lakásban, a házban és a Corvin negyedben.",
     "thumbnailUrl": "https://corvin-setany-5b-36304070520.github.io/img/hero-poster.jpg",
-    "contentUrl": "https://corvin-setany-5b-36304070520.github.io/teljes-720p.mp4",
+    "contentUrl": "https://www.youtube.com/watch?v=joJ397SELoM",
+    "embedUrl": "https://www.youtube.com/embed/joJ397SELoM",
     "duration": "PT1M50S"
   }
 }
@@ -413,6 +414,34 @@ html{scroll-behavior:smooth}
    kepeket, amelyeken width es height attributum van. A .band, .strip, .hero
    es .plans szabalyok nagyobb specificitasuak, oket ez nem erinti. */
 img{height:auto}
+
+/* ---------- YouTube beagyazas, kattintasra betolt ---------- */
+.player{position:relative}
+.player iframe{width:100%;height:100%;border:0;display:block}
+.ytfacade{
+  position:absolute;inset:0;width:100%;height:100%;
+  padding:0;border:0;background:#0A0E0A;cursor:pointer;display:block;
+}
+.ytfacade img{width:100%;height:100%;object-fit:cover;opacity:.82;transition:opacity .25s}
+.ytfacade:hover img{opacity:.92}
+.ytbtn{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:76px;height:76px;border-radius:50%;
+  background:rgba(12,20,14,.72);border:1px solid rgba(246,245,239,.4);
+  color:#F6F5EF;display:grid;place-items:center;
+  backdrop-filter:blur(4px);transition:transform .2s, background .2s;
+}
+.ytfacade:hover .ytbtn{transform:translate(-50%,-50%) scale(1.07);background:rgba(44,85,57,.88)}
+.ytbtn svg{width:34px;height:34px;margin-left:4px}
+.ytlabel{
+  position:absolute;left:0;right:0;bottom:18px;
+  font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+  color:rgba(246,245,239,.92);text-shadow:0 1px 12px rgba(0,0,0,.6);
+}
+@media (max-width:560px){
+  .ytbtn{width:62px;height:62px}
+  .ytbtn svg{width:28px;height:28px}
+}
 </style>
 </head>
 <body>
@@ -547,15 +576,16 @@ img{height:auto}
     <h2 data-hu="Végigjárjuk a lakást, a házat és a környéket" data-en="A walk through the flat, the building and the neighbourhood">Végigjárjuk a lakást, a házat és a környéket</h2>
     <p class="lede" style="margin-top:14px" data-hu="Egy perc ötven másodperc: bejárat, nappali, szobák, konyha, fürdő, terasz, belső kert, és a Corvin negyed." data-en="One minute fifty: entrance, living area, bedrooms, kitchen, bathroom, terrace, inner garden, and the Corvin quarter.">Egy perc ötven másodperc: bejárat, nappali, szobák, konyha, fürdő, terasz, belső kert, és a Corvin negyed.</p>
     <div class="player">
-      <video id="tour" controls preload="metadata" poster="img/nappali-1.jpg" playsinline crossorigin="anonymous">
-        <source src="teljes-720p.mp4" type="video/mp4">
-        <track id="tour-en" kind="subtitles" src="teljes-en.vtt" srclang="en" label="English">
-      </video>
+      <button class="ytfacade" id="ytplay" type="button" aria-label="Videós bemutató lejátszása">
+        <img src="img/nappali-1.jpg" srcset="img/nappali-1-sm.jpg 800w, img/nappali-1.jpg 1600w" sizes="(max-width: 900px) 92vw, 1100px" alt="Videós bemutató a lakásról" loading="lazy" width="1600" height="901">
+        <span class="ytbtn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        <span class="ytlabel" data-hu="Videós bemutató, 1 perc 50" data-en="Video tour, 1 min 50">Videós bemutató, 1 perc 50</span>
+      </button>
     </div>
     <div class="vidmeta">
       <span><b data-hu="Hossz" data-en="Length">Hossz</b> 1:50</span>
       <span><b data-hu="Felvétel" data-en="Filmed">Felvétel</b> <span data-hu="a lakás mai állapotában" data-en="in the flat's present state">a lakás mai állapotában</span></span>
-      <span data-hu="A narráció magyar nyelvű. Angol felirat a lejátszó feliratgombjával bekapcsolható." data-en="The narration is in Hungarian. English subtitles are on by default; switch them with the subtitles button.">A narráció magyar nyelvű. Angol felirat a lejátszó feliratgombjával bekapcsolható.</span>
+      <span data-hu="A narráció magyar nyelvű. Angol felirat a lejátszó CC gombjával kapcsolható be." data-en="The narration is in Hungarian. Turn on English subtitles with the CC button in the player.">A narráció magyar nyelvű. Angol felirat a lejátszó CC gombjával kapcsolható be.</span>
     </div>
   </div>
 </section>

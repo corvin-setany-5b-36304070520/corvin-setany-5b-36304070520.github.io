@@ -96,10 +96,6 @@
     for (var j = 0; j < caps.length; j++){
       caps[j].textContent = SHOTS[+caps[j].getAttribute("data-shotcap")][next];
     }
-    var trk = document.getElementById("tour-en");
-    if (trk && trk.track) {
-      try { trk.track.mode = (next === "en") ? "showing" : "disabled"; } catch(e){}
-    }
     document.getElementById("lang-hu").setAttribute("aria-pressed", String(next === "hu"));
     document.getElementById("lang-en").setAttribute("aria-pressed", String(next === "en"));
     try { history.replaceState(null, "", next === "en" ? "?lang=en" : location.pathname); } catch(e){}
@@ -182,13 +178,24 @@
     }
   }
 
-  /* video tour ---------------------------------------------------- */
-  var tour = document.getElementById("tour");
-  if (tour) {
-    var fired = {};
-    tour.addEventListener("play", function(){
-      if (!fired.play) { fired.play = 1; track("ViewContent"); }
+  /* videos bemutato, YouTube beagyazas kattintasra ----------------- */
+  var YT_ID = "joJ397SELoM";
+  var yt = document.getElementById("ytplay");
+  if (yt) {
+    yt.addEventListener("click", function(){
+      var p = yt.parentNode;
+      var q = "autoplay=1&rel=0&playsinline=1&modestbranding=1" +
+              (lang === "en" ? "&hl=en&cc_lang_pref=en&cc_load_policy=1" : "&hl=hu");
+      var f = document.createElement("iframe");
+      f.src = "https://www.youtube-nocookie.com/embed/" + YT_ID + "?" + q;
+      f.title = lang === "en" ? "Video tour of the apartment" : "Videós bemutató a lakásról";
+      f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      f.setAttribute("allowfullscreen", "");
+      f.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+      p.innerHTML = "";
+      p.appendChild(f);
       if (hv) hv.pause();
+      track("ViewContent");
     });
   }
 
