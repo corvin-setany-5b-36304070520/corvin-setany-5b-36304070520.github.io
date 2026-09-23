@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="hu" data-pal="len">
 <head>
 <meta charset="utf-8">
+<script>(function(){var m=location.search.match(/[?&]t=(len|homok|krem)\b/);if(m)document.documentElement.setAttribute('data-pal',m[1]);})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Corvin sétány, ötödik emelet | Eladó lakás, Budapest VIII.</title>
 <meta name="description" content="Eladó 71 m², teraszos, belső kertre néző lakás a Corvin sétány 5/b-ben, ötödik emeleten, 2017-es házban. Videós bemutató, alaprajz, részletes adatok. Magánszemély hirdetése. +36 30 407 0520">
@@ -21,7 +22,7 @@
 <meta name="twitter:title" content="Corvin sétány, ötödik emelet | Eladó lakás, Budapest VIII.">
 <meta name="twitter:description" content="71 m², terasz, belső kertre néző ablakok, 2017-es ház, ötödik emelet.">
 <meta name="twitter:image" content="https://corvin-setany-5b-36304070520.github.io/img/og-share.jpg">
-<meta name="theme-color" content="#2C5539">
+<meta name="theme-color" content="#F4EDE2">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%232C5539'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' fill='%23FBFAF6' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -595,6 +596,54 @@ footer{background:#1B1713;border-top:1px solid var(--line);color:var(--ink-3);pa
 footer a{color:var(--ink-2)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
+
+/* ================= G: VILÁGOS MELEG ALAP ugyanazzal a szerkezettel ================= */
+/* három árnyalat: len (alap), homok, krem; váltás: ?t=len | ?t=homok | ?t=krem */
+html:root[data-pal]{
+  --accent:#8E5314;          /* szövegszínű borostyán, világos alapon is olvasható */
+  --accent-fill:#E0A33F;     /* gomb és kiemelés kitöltése */
+  --accent-2:#8E5314; --oak:#8E5314;
+  --ink:#221D19;
+  --deep:#221D19;            /* espresso horgony: lábléc */
+}
+html:root[data-pal="len"]{
+  --paper:#F4EDE2; --surface:#EBE2D4; --field:#FBF7F0;
+  --ink-2:#57493D; --ink-3:#7F7164; --line:#D8CCBA; --line-soft:#E4DACB;
+  --bar:rgba(244,237,226,.86);
+}
+html:root[data-pal="homok"]{
+  --paper:#EDE3D3; --surface:#E3D6C2; --field:#F7F1E7;
+  --ink-2:#54463A; --ink-3:#7A6B5C; --line:#CDBEA7; --line-soft:#DCCFBC;
+  --bar:rgba(237,227,211,.86);
+}
+html:root[data-pal="krem"]{
+  --paper:#FAF6EE; --surface:#F1E9DC; --field:#FFFDF8;
+  --ink-2:#5A4D42; --ink-3:#85786B; --line:#E0D5C4; --line-soft:#EBE3D6;
+  --bar:rgba(250,246,238,.86);
+}
+html[data-pal] body{background:var(--paper);color:var(--ink)}
+html[data-pal] header.bar{background:var(--bar);border-bottom-color:var(--line)}
+html[data-pal] .langs button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+html[data-pal] .videowrap{background:var(--surface);border-block:1px solid var(--line)}
+html[data-pal] .price-wrap{background:var(--surface)}
+html[data-pal] .rail{background:var(--paper)}
+html[data-pal] .rail .v{color:var(--ink)}
+html[data-pal] .band img{opacity:1}
+html[data-pal] .btn{border-color:var(--accent-fill)}
+html[data-pal] .btn.primary{background:var(--accent-fill);color:#221D19;border-color:var(--accent-fill)}
+html[data-pal] .btn.ghost{color:var(--accent);border-color:var(--accent)}
+html[data-pal] .btn.ghost:hover{background:rgba(224,163,63,.16)}
+html[data-pal] .field input,html[data-pal] .field textarea{background:var(--field);border-color:var(--line);color:var(--ink)}
+html[data-pal] .field input:focus,html[data-pal] .field textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(224,163,63,.28)}
+html[data-pal] .rooms tr.sum td{border-bottom-color:var(--accent-fill)}
+/* bal oldali színes csík helyett keretes megjegyzés és felső vonalas idézet */
+html[data-pal] .note{background:var(--surface);border:1px solid var(--line);border-left:1px solid var(--line);color:var(--ink-2)}
+html[data-pal] .quote{border-left:0;padding-left:0;padding-top:18px;border-top:1px solid var(--accent-fill)}
+html[data-pal] footer{background:var(--deep);border-top:0;color:#9C9287}
+html[data-pal] footer{--ink:#F4EFE7;--ink-2:#C8BEB2;--ink-3:#9C9287}
+html[data-pal] footer a{color:#C8BEB2}
+html[data-pal] footer a:hover{color:#F4EFE7}
+html[data-pal] :focus-visible{outline-color:var(--accent)}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
@@ -824,7 +873,7 @@ footer a{color:var(--ink-2)}
       <div class="d"><span data-hu="Corvin Plaza" data-en="Corvin Plaza">Corvin Plaza</span><span>300 m</span></div>
       <div class="d"><span data-hu="M3 metró" data-en="M3 metro">M3 metró</span><span data-hu="gyalog" data-en="on foot">gyalog</span></div>
       <div class="d"><span data-hu="Éttermek, kávézók" data-en="Restaurants and cafés">Éttermek, kávézók</span><span data-hu="a sétányon" data-en="on the promenade">a sétányon</span></div>
-      <div class="d"><span data-hu="Belváros" data-en="City centre">Belváros</span><span data-hu="5 – 10 perc" data-en="5 to 10 min">5 – 10 perc</span></div>
+      <div class="d"><span data-hu="Belváros" data-en="City centre">Belváros</span><span data-hu="5 és 10 perc között" data-en="5 to 10 min">5 és 10 perc között</span></div>
       <div class="d"><span data-hu="Nyugati pályaudvar" data-en="Nyugati railway station">Nyugati pályaudvar</span><span data-hu="közvetlen" data-en="direct">közvetlen</span></div>
       <div class="d"><span data-hu="Liszt Ferenc repülőtér" data-en="Liszt Ferenc airport">Liszt Ferenc repülőtér</span><span data-hu="közvetlen" data-en="direct">közvetlen</span></div>
       <div class="d"><span data-hu="Zárt, kamerás ház" data-en="Gated, monitored building">Zárt, kamerás ház</span><span data-hu="2 lift" data-en="2 lifts">2 lift</span></div>
