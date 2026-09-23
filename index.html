@@ -442,7 +442,161 @@ img{height:auto}
   .ytbtn{width:62px;height:62px}
   .ytbtn svg{width:28px;height:28px}
 }
+
+/* ================= F: ESPRESSO, a 02 galéria irány éles változata ================= */
+:root{
+  --paper:#221D19;
+  --surface:#2A241F;
+  --ink:#F4EFE7;
+  --ink-2:#C8BEB2;
+  --ink-3:#9C9287;
+  --line:#3B332C;
+  --line-soft:#2F2822;
+  --accent:#E0A33F;
+  --accent-2:#E0A33F;
+  --oak:#E0A33F;
+  --hero-ink:#F8F4EC;
+  --shadow:none;
+  --maxw:1280px;
+  --disp:"Syne",Georgia,serif;
+  --body:"Archivo",Helvetica,Arial,sans-serif;
+}
+:root[data-theme="light"],
+:root[data-theme="dark"]{
+  --paper:#221D19; --surface:#2A241F; --ink:#F4EFE7; --ink-2:#C8BEB2; --ink-3:#9C9287;
+  --line:#3B332C; --line-soft:#2F2822; --accent:#E0A33F; --accent-2:#E0A33F;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#221D19; --surface:#2A241F; --ink:#F4EFE7; --ink-2:#C8BEB2; --ink-3:#9C9287;
+    --line:#3B332C; --line-soft:#2F2822; --accent:#E0A33F; --accent-2:#E0A33F;
+  }
+}
+
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px}
+h1,h2,h3{font-family:var(--disp);font-weight:600;letter-spacing:-.03em}
+h1{font-size:clamp(2.8rem,8.2vw,7rem);line-height:.88;font-weight:800;text-transform:uppercase;letter-spacing:-.045em}
+h2{font-size:clamp(2rem,4.8vw,3.5rem);line-height:1;letter-spacing:-.035em}
+h3{font-size:1.05rem;letter-spacing:-.01em;font-weight:600}
+.lede{font-size:clamp(1.05rem,1.8vw,1.28rem);line-height:1.55;color:var(--ink-2)}
+.body-col{color:var(--ink-2)}
+.body-col strong{color:var(--ink)}
+
+/* szakaszcímke */
+.eyebrow{
+  display:inline-block;background:none;padding:0;border-radius:0;margin-bottom:16px;
+  color:var(--accent);font-size:.72rem;letter-spacing:.2em;font-weight:600;
+}
+
+/* fejléc */
+header.bar{
+  background:rgba(34,29,25,.82);backdrop-filter:saturate(150%) blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.mark{font-family:var(--disp);font-weight:800;letter-spacing:-.01em;text-transform:uppercase;font-size:.95rem}
+.mark em{color:var(--ink-3)}
+nav.links{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+nav.links a:hover{color:var(--ink);border-bottom-color:var(--accent)}
+.langs{border-radius:999px;border-color:var(--line)}
+.langs button{color:var(--ink-3)}
+.langs button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+
+/* hero */
+.hero{background:#14100D}
+.hero .media{height:clamp(500px,88vh,880px)}
+.hero .media video,.hero .media img.fallback{opacity:.78}
+.hero .scrim{background:linear-gradient(to top, rgba(20,16,13,.88) 0%, rgba(20,16,13,.34) 46%, rgba(20,16,13,.08) 74%, rgba(20,16,13,.30) 100%)}
+.hero h1{max-width:13ch;text-shadow:none}
+.hero .place{font-size:.74rem;letter-spacing:.2em;color:rgba(248,244,236,.72)}
+.hero .sub{color:rgba(248,244,236,.84);text-shadow:none;max-width:46ch}
+.hero .kicker{
+  border-radius:999px;border:1px solid rgba(248,244,236,.4);background:rgba(20,16,13,.3);
+  letter-spacing:.1em;font-weight:600;padding:11px 20px;
+}
+.hero .kicker:hover{background:rgba(224,163,63,.9);color:#221D19;border-color:transparent}
+
+/* adatsáv */
+.rail{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rail-in{max-width:none;padding:0 48px}
+.rail .cell{border-right:1px solid var(--line);padding:26px 22px 26px 0}
+.rail .cell:last-child{border-right:0}
+.rail .k{font-size:.66rem;letter-spacing:.2em;color:var(--ink-3)}
+.rail .v{font-family:var(--disp);font-weight:600;font-size:clamp(1.3rem,2.2vw,1.85rem);letter-spacing:-.02em;color:var(--ink)}
+.rail .v small{color:var(--ink-3);font-family:var(--body)}
+@media (max-width:820px){.rail .cell{border-bottom:1px solid var(--line)}}
+
+/* szakaszok: azonos alap, a képek választják el őket */
+.section,.gallery,.videowrap,.price-wrap{background:var(--paper)}
+.gallery{border-block:0}
+.price-wrap{background:var(--surface);border-block:1px solid var(--line)}
+.videowrap{background:#1B1713}
+
+/* galéria: teljes szélességű mozaik, 2 px rés */
+.gallery .strip{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;
+  overflow:visible;scroll-snap-type:none;padding:0;margin-top:30px;
+}
+.gallery .strip figure,.gallery .strip figure.tall{flex:none;width:auto;scroll-snap-align:none;position:relative}
+.gallery .strip img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:0}
+.gallery .strip .tall img{aspect-ratio:3/2;object-position:center 42%}
+.gallery .strip figcaption{
+  margin-top:0;padding:10px 14px;font-size:.76rem;color:var(--ink-3);
+  display:flex;gap:8px;
+}
+.gallery .strip figcaption b{color:var(--accent);font-weight:600}
+.gallery .hint{display:none}
+@media (max-width:900px){.gallery .strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.gallery .strip{grid-template-columns:1fr}}
+
+/* videó */
+.videowrap .player{margin-top:32px}
+.videowrap .player img,.videowrap .player iframe{width:100%;aspect-ratio:16/9;height:auto;object-fit:cover;border-radius:0}
+
+/* képek, sáv */
+img{border-radius:0}
+.figure img{border-radius:0;box-shadow:none}
+.band img{opacity:.82}
+.band .over{background:linear-gradient(to top, rgba(20,16,13,.94) 8%, rgba(20,16,13,.72) 48%, rgba(20,16,13,0))}
+
+/* ár */
+.bignum{font-family:var(--disp);font-weight:800;letter-spacing:-.045em;font-size:clamp(2.8rem,8vw,5.6rem);color:var(--ink)}
+.bignum span{font-family:var(--body);color:var(--accent);font-weight:400}
+.opt td{border-bottom-color:var(--line);color:var(--ink-2)}
+.opt td:last-child{color:var(--ink)}
+
+/* táblázatok, részletek */
+.features .f{border-top:1px solid var(--line)}
+.rooms th{border-bottom:1px solid var(--line);color:var(--ink-3);letter-spacing:.16em}
+.rooms td{border-bottom:1px solid var(--line-soft);color:var(--ink-2)}
+.rooms td:last-child{color:var(--ink)}
+.rooms tr.sum td{color:var(--ink);border-bottom:1px solid var(--accent)}
+.rooms tr.extra td{color:var(--accent)}
+.note{background:rgba(224,163,63,.10);border-left:2px solid var(--accent);color:var(--ink-2)}
+.dist .d{border-bottom:1px solid var(--line)}
+.dist .d span:first-child{color:var(--ink-2)}
+.dist .d span:last-child{color:var(--ink)}
+.quote{border-left:2px solid var(--accent);font-family:var(--disp);font-weight:600;letter-spacing:-.03em}
+.stateline .tag{border-color:var(--line);color:var(--ink-2)}
+
+/* gombok, űrlap */
+.btn{border-radius:999px;padding:16px 30px;font-weight:600;letter-spacing:.02em;border:1px solid var(--accent)}
+.btn.primary{background:var(--accent);color:#221D19;border-color:var(--accent)}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.ghost:hover{background:rgba(224,163,63,.14)}
+.field input,.field textarea{background:#1B1713;border:1px solid var(--line);border-radius:10px;color:var(--ink)}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(224,163,63,.22)}
+.field label{color:var(--ink-3);letter-spacing:.14em}
+a.plainlink{color:var(--accent)}
+.sent{color:var(--accent)}
+
+/* lábléc */
+footer{background:#1B1713;border-top:1px solid var(--line);color:var(--ink-3);padding-block:44px}
+footer a{color:var(--ink-2)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 <header class="bar">
