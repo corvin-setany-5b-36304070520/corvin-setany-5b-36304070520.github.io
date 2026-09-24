@@ -30,7 +30,7 @@
     {f:"haz-3", hu:"Park Residence, a ház előtere", en:"Park Residence, the building lobby"},
     {f:"haz-5", hu:"Az előtér az utca felől", en:"The lobby from the street side"},
     {f:"haz-4", hu:"A ház a sétány felől, kávézókkal", en:"The building from the promenade, with cafés"},
-    {f:"setany-1", hu:"A Corvin sétány üzletekkel, száz méterre", en:"Corvin sétány with its shops, a hundred metres away"},
+    {f:"setany-1", hu:"A Corvin sétány üzletekkel, száz méterre", en:"Corvin Promenade with its shops, a hundred metres away"},
     {f:"setany-2", hu:"Fasor a sétányon", en:"The tree lined promenade"},
     {f:"setany-6", hu:"A sétány a ház előtt", en:"The promenade in front of the building", tall:true},
     {f:"setany-7", hu:"Üzletek és kerékpártárolók a sétányon", en:"Shops and bike racks on the promenade", tall:true},
@@ -211,7 +211,7 @@
     var msg = document.getElementById("f-msg").value.trim();
     var L = lang === "hu"
       ? { sub: "Érdeklődés: Corvin sétány lakás", n: "Név", p: "Telefon", m: "E-mail", t: "Üzenet" }
-      : { sub: "Enquiry: Corvin sétány apartment", n: "Name", p: "Phone", m: "Email", t: "Message" };
+      : { sub: "Enquiry: Corvin Promenade apartment", n: "Name", p: "Phone", m: "Email", t: "Message" };
     var body = L.n + ": " + (name || "-") + "\n" +
                L.p + ": " + (phone || "-") + "\n" +
                L.m + ": " + (mail || "-") + "\n\n" +
