@@ -2,22 +2,26 @@
   "use strict";
 
   var SHOTS = [
-    {f:"nappali-1", hu:"Nappali a kertre néző ablakokkal", en:"Living room with windows onto the garden"},
-    {f:"nappali-2", hu:"Nappali, étkező és közlekedő egy térben", en:"Living room, dining area and hallway in one space"},
-    {f:"etkezo-1", hu:"Étkező a beépített tálalóval", en:"Dining area with the fitted sideboard"},
-    {f:"etkezo-2", hu:"Étkezősarok", en:"Dining corner", tall:true},
-    {f:"konyha-1", hu:"Konyha közvetlenül az étkező mellett", en:"Kitchen right next to the dining area", tall:true},
-    {f:"konyha-2", hu:"AEG gépesített konyha, mosogatógéppel", en:"Fitted AEG kitchen with dishwasher", tall:true},
-    {f:"szoba-1", hu:"A nagyobbik szoba, 15,21 m²", en:"The larger bedroom, 15.21 m²"},
-    {f:"szoba-2", hu:"Szoba a beépített komóddal", en:"Bedroom with the fitted chest of drawers"},
-    {f:"szoba-3", hu:"Beépített szekrénysor a szobában", en:"Fitted wardrobe wall in the bedroom"},
-    {f:"szoba-4", hu:"A szoba bejárati oldala", en:"The bedroom seen from the door"},
+    {f:"nappali-1", hu:"Nappali a teraszajtóval", en:"Living room with the terrace door"},
+    {f:"nappali-2", hu:"Nappali, étkező, előszoba és konyha egy térben", en:"Living room, dining area, hall and kitchen in one space"},
+    {f:"nappali-3", hu:"Sarokkanapé a nappaliban", en:"Corner sofa in the living room"},
+    {f:"nappali-4", hu:"Dohányzóasztal a nappaliban", en:"Coffee table in the living room"},
+    {f:"eloszoba-1", hu:"Előszoba tükrös beépített szekrénnyel", en:"Entrance hall with a mirrored fitted wardrobe", tall:true},
+    {f:"konyha-1", hu:"Konyha az étkező felől", en:"The kitchen seen from the dining area", tall:true},
+    {f:"konyha-2", hu:"Kétoldalas konyha páraelszívóval és mikrohullámú sütővel", en:"Two sided kitchen with extractor hood and microwave"},
+    {f:"konyha-3", hu:"AEG sütő és főzőlap", en:"AEG oven and hob"},
+    {f:"konyha-4", hu:"Mosogató a konyhában", en:"The kitchen sink"},
+    {f:"szoba-1", hu:"Hálószoba nagy ablakokkal", en:"Bedroom with large windows"},
+    {f:"szoba-2", hu:"Hálószoba tükrös gardróbszekrénnyel", en:"Bedroom with a mirrored wardrobe"},
+    {f:"szoba-3", hu:"Beépített szekrénysor és komód a hálóban", en:"Fitted wardrobe wall and chest of drawers in the bedroom"},
+    {f:"szoba-4", hu:"Franciaágy a hálóban", en:"Double bed in the bedroom"},
+    {f:"szoba-5", hu:"Függőlámpa a hálóban", en:"Pendant light in the bedroom"},
     {f:"furdo-1", hu:"Kádas fürdőszoba zuhanyfallal", en:"Bathroom with tub and shower screen", tall:true},
-    {f:"furdo-2", hu:"Fürdőszoba, mosdó és tükrös szekrény", en:"Bathroom, washbasin and mirror cabinet", tall:true},
+    {f:"furdo-2", hu:"Masszázskád, mosdó és tükör", en:"Whirlpool bath, washbasin and mirror"},
+    {f:"wc-1", hu:"Külön WC kézmosóval", en:"Separate WC with washbasin", tall:true},
     {f:"terasz-1", hu:"A terasz, 11,09 m², bútorozva", en:"The terrace, 11.09 m², furnished", tall:true},
-    {f:"terasz-2", hu:"A terasz végigfut a lakás kertre néző oldalán", en:"The terrace runs along the garden side of the flat", tall:true},
-    {f:"terasz-3", hu:"A terasz a klímaburkolattal", en:"The terrace with the air conditioning enclosure", tall:true},
-    {f:"terasz-4", hu:"A terasz a lakás felé", en:"The terrace looking back towards the flat", tall:true},
+    {f:"terasz-2", hu:"A terasz végigfut a lakás kertre néző oldalán", en:"The terrace runs along the garden side of the flat"},
+    {f:"terasz-3", hu:"A terasz a klímaburkolattal", en:"The terrace with the air conditioning enclosure"},
     {f:"wpc-1", hu:"WPC teraszburkolat, gondozásmentes", en:"WPC terrace decking, maintenance free", tall:true},
     {f:"kert-1", hu:"A belső kert a teraszról", en:"The inner garden from the terrace"},
     {f:"kert-2", hu:"A belső kert tavasszal", en:"The inner garden in spring"},
@@ -179,7 +183,7 @@
   }
 
   /* videos bemutato, YouTube beagyazas kattintasra ----------------- */
-  var YT_ID = "joJ397SELoM";
+  var YT_ID = "0qIZ1gq6-OM";
   var yt = document.getElementById("ytplay");
   if (yt) {
     yt.addEventListener("click", function(){
